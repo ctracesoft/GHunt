@@ -8,7 +8,7 @@ from ghunt.helpers.gmail import is_email_registered
 
 async def main():
     if not sys.argv[1:]:
-        exit("Please give an email address.")
+        raise ValueError("Please give an email address.")
 
     as_client = httpx.AsyncClient() # Async Client
 

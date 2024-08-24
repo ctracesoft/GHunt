@@ -45,7 +45,7 @@ def run(server_class=HTTPServer, handler_class=Server, port=60067):
                 break
 
     except KeyboardInterrupt:
-        exit("[-] Exiting...")
+        raise ValueError("[-] Exiting...")
     else:
         if handler_class.data_bridge.data:
             print("[+] Received cookies !")

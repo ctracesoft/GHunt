@@ -22,7 +22,7 @@ async def check_and_login(as_client: httpx.AsyncClient, clean: bool=False) -> No
             print(f"[+] Credentials file at {creds_path} deleted !")
         else:
             print(f"Credentials file at {creds_path} doesn't exists, no need to delete.")
-        exit()
+        raise ValueError()
 
     if not as_client:
         as_client = get_httpx_client()
@@ -59,7 +59,7 @@ async def check_and_login(as_client: httpx.AsyncClient, clean: bool=False) -> No
         if new_gen_inp == "y":
             oauth_token, master_token = auth.auth_dialog()
         else:
-            exit()
+            raise ValueError()
 
     ghunt_creds.android.authorization_tokens = {} # Reset the authorization tokens
 

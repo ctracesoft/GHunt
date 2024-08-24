@@ -20,7 +20,7 @@ async def detect_face(vision_api: VisionHttp, as_client: httpx.AsyncClient, imag
             break
         await asyncio.sleep(0.5)
     else:
-        exit("\n[-] Vision API keeps rate-limiting.")
+        raise ValueError("\n[-] Vision API keeps rate-limiting.")
 
     if are_faces_found:
         if len(faces_results.face_annotations) > 1:

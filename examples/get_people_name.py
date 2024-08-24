@@ -9,7 +9,7 @@ from ghunt.objects.base import GHuntCreds
 
 async def main():
     if not sys.argv[1:]:
-        exit("Please give an email address.")
+        raise ValueError("Please give an email address.")
     email = sys.argv[1]
 
     ghunt_creds = GHuntCreds()

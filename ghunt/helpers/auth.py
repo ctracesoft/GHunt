@@ -195,7 +195,7 @@ def auth_dialog() -> Tuple[Dict[str, str], str] :
         master_token = input(f"Master token => ").strip('" ')
 
     else:
-        exit("Please choose a valid choice. Exiting...")
+        raise ValueError("Please choose a valid choice. Exiting...")
 
     return oauth_token, master_token
 

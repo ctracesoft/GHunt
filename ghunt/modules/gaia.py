@@ -24,7 +24,7 @@ async def hunt(as_client: httpx.AsyncClient, gaia_id: str, json_file: Path=None)
     # vision_api = VisionHttp(ghunt_creds)
     is_found, target = await people_pa.people(as_client, gaia_id, params_template="max_details")
     if not is_found:
-        exit("[-] The target wasn't found.")
+        raise ValueError("[-] The target wasn't found.")
 
     if json_file:
         json_results = {}
@@ -37,7 +37,7 @@ async def hunt(as_client: httpx.AsyncClient, gaia_id: str, json_file: Path=None)
             print(f"- {container.title()}")
 
     if not "PROFILE" in containers:
-        exit("[-] Given information does not match a public Google Account.")
+        raise ValueError("[-] Given information does not match a public Google Account.")
 
     container = "PROFILE"
     
