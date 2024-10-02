@@ -32,47 +32,48 @@ async def hunt(as_client: httpx.AsyncClient, email_address: str, json_file: Path
     containers = target.sourceIds
 
     # if len(containers) > 1 or not "PROFILE" in containers:
-        # # print("[!] You have this person in these containers :")
-        # for container in containers:
-            # print(f"- {container.title()}")
+    # # print("[!] You have this person in these containers :")
+    # for container in containers:
+    # print(f"- {container.title()}")
 
     if not "PROFILE" in containers:
-        raise ValueError("[-] Given information does not match a public Google Account.")
+        raise ValueError(
+            "[-] Given information does not match a public Google Account.")
 
     container = "PROFILE"
 
     # gb.rc.print("🙋 Google Account data\n", style="plum2")
 
     # if container in target.names:
-        # print(f"Name : {target.names[container].fullname}\n")
+    # print(f"Name : {target.names[container].fullname}\n")
 
     # if container in target.profilePhotos:
-        # if target.profilePhotos[container].isDefault:
-            # print("[-] Default profile picture")
-        # else:
-            # print("[+] Custom profile picture !")
-            # print(f"=> {target.profilePhotos[container].url}")
+    # if target.profilePhotos[container].isDefault:
+    # print("[-] Default profile picture")
+    # else:
+    # print("[+] Custom profile picture !")
+    # print(f"=> {target.profilePhotos[container].url}")
 
-            # await ia.detect_face(vision_api, as_client, target.profilePhotos[container].url)
-            # print()
+    # await ia.detect_face(vision_api, as_client, target.profilePhotos[container].url)
+    # print()
 
     # if container in target.coverPhotos:
-        # if target.coverPhotos[container].isDefault:
-            # print("[-] Default cover picture\n")
-        # else:
-            # print("[+] Custom cover picture !")
-            # print(f"=> {target.coverPhotos[container].url}")
+    # if target.coverPhotos[container].isDefault:
+    # print("[-] Default cover picture\n")
+    # else:
+    # print("[+] Custom cover picture !")
+    # print(f"=> {target.coverPhotos[container].url}")
 
-            # await ia.detect_face(vision_api, as_client, target.coverPhotos[container].url)
-            # print()
+    # await ia.detect_face(vision_api, as_client, target.coverPhotos[container].url)
+    # print()
 
     # print(f"Last profile edit : {
-        #   target.sourceIds[container].lastUpdated.strftime('%Y/%m/%d %H:%M:%S (UTC)')}\n")
+    #   target.sourceIds[container].lastUpdated.strftime('%Y/%m/%d %H:%M:%S (UTC)')}\n")
 
     # if container in target.emails:
-        # print(f"Email : {target.emails[container].value}")
+    # print(f"Email : {target.emails[container].value}")
     # else:
-        # print(f"Email : {email_address}\n")
+    # print(f"Email : {email_address}\n")
 
     # print(f"Gaia ID : {target.personId}")
 
